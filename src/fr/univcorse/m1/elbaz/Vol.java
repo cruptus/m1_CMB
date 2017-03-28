@@ -36,4 +36,11 @@ public class Vol {
         this.hArrive = this.hDepart + duree;
         this.destination = arrive;
     }
+
+    public String information(TypeFlight typeFlight) {
+        if (typeFlight.equals(TypeFlight.ARRIVEE))
+            return "Vol "+this.nom+" - De "+this.origine.getNom()+" - Temps du trajet : "+this.hArrive+"h";
+        else
+            return "Vol "+this.nom+" - A "+this.destination.getNom()+" - Temps du trajet : "+this.hDepart+"h";
+    }
 }

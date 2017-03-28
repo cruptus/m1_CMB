@@ -90,4 +90,15 @@ public class Porte {
         }
         return  vol;
     }
+
+    public String information(TypeFlight typeFlight) {
+        String tmp = "";
+        if (this.vols.size() == 0)
+            return "\n";
+
+        for (Vol vol: this.vols) {
+            tmp += vol.information(typeFlight) + "\n";
+        }
+        return tmp;
+    }
 }

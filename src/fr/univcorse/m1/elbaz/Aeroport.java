@@ -1,5 +1,7 @@
 package fr.univcorse.m1.elbaz;
 
+import fr.univcorse.m1.elbaz.graphic.MyRowAirport;
+
 import java.util.Random;
 
 
@@ -116,5 +118,27 @@ public class Aeroport {
                 arrive.porteArrivee[numPorteA].ajouterVolAPorte(enCours, TypeFlight.ARRIVEE);
             }
         }
+    }
+
+    public void information (TypeFlight typeFlight, MyRowAirport myRowAirport) {
+        String tmp = "";
+        for (int i = 0; i < this.porteArrivee.length; i++) {
+            tmp += "Porte " + (i + 1) + " : ";
+            if(typeFlight.equals(TypeFlight.ARRIVEE)) {
+                tmp += this.porteArrivee[i].information(typeFlight);
+            } else {
+                tmp += this.porteDepart[i].information(typeFlight);
+            }
+        }
+        if (typeFlight.equals(TypeFlight.ARRIVEE)) {
+            myRowAirport.setArrive(tmp);
+        } else {
+            myRowAirport.setDepart(tmp);
+        }
+        myRowAirport.setPas(Float.toString(this.temps));
+    }
+
+    public String getNom() {
+        return nom;
     }
 }

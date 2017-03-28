@@ -1,5 +1,7 @@
 package fr.univcorse.m1.elbaz;
 
+import fr.univcorse.m1.elbaz.graphic.MyRowAirport;
+
 import javax.swing.*;
 import java.util.ArrayList;
 import java.util.List;
@@ -17,7 +19,7 @@ public class Manager {
     }
 
     public void coupler(Aeroport depart, int porteD, Aeroport arrive, int porteA, float duree) {
-        depart.couplage(porteD, arrive, porteA, duree);
+        depart.couplage(porteD -1 , arrive, porteA -1 , duree);
     }
 
     public void list(Aeroport... aeroports) {
@@ -31,6 +33,13 @@ public class Manager {
             aeroport.avancerTemps();
             aeroport.changerPortes();
             aeroport.envoyerVol();
+        }
+    }
+
+    public void result (ArrayList<MyRowAirport> rows) {
+        for (int i = 0; i < this.aeroports.size(); i++) {
+            this.aeroports.get(i).information(TypeFlight.ARRIVEE, rows.get(i));
+            this.aeroports.get(i).information(TypeFlight.DEPART, rows.get(i));
         }
     }
 }
