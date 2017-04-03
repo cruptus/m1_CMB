@@ -1,6 +1,6 @@
-# TP socket.io	
+# TP CMB	
 
-Auteur : Elbaz Jérémie
+Auteur : Elbaz Jérémie & Teva Locandro
 
 Formation : Master 1 S2I
 
@@ -15,9 +15,3 @@ Java `1.8`
 $ git clone git@github.com:cruptus/m1_CMB.git cmb
 $ cd cmb
 ```
-
-## Lancement
-
-## TODO
-
-- Interface
